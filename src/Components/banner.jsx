@@ -38,7 +38,6 @@ export default function HeroBanner() {
         slidesPerView={1}
         spaceBetween={0}
         speed={800}
-        effect="slide"
         modules={[Autoplay, Pagination, Navigation]}
         className="h-[80vh] rounded-xl overflow-hidden"
       >

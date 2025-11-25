@@ -46,7 +46,11 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen rounded-3xl flex items-center justify-center bg-gradient-to-br from-purple-800 via-fuchsia-700 to-rose-600 px-4">
+    <div className="min-h-screen py-18 rounded-3xl flex items-center justify-center px-4 relative overflow-hidden bg-black">
+      {/* Background Blur */}
+      <div className="absolute w-[600px] h-[600px] bg-purple-600/40 rounded-full blur-[160px] -top-40 -left-40"></div>
+
+      <div className="absolute w-[500px] h-[500px] bg-fuchsia-600/40 rounded-full blur-[160px] -bottom-40 -right-40"></div>
       <div className="w-full max-w-md bg-white/10 backdrop-blur-xl shadow-2xl rounded-2xl p-8 border border-white/20 animate-fadeIn">
         {/* Header */}
         <h2 className="text-4xl font-extrabold text-center text-white tracking-wide drop-shadow-lg mb-6">
@@ -71,7 +75,7 @@ export default function Login() {
               type="email"
               {...register("email", { required: "Email is required" })}
               placeholder="you@example.com"
-              className="input input-bordered w-full bg-white/20 text-white placeholder-white/50 border-white/30 focus:border-yellow-300"
+              className="input input-bordered mb-4 mt-2 w-full bg-white/20 text-white placeholder-white/50 border-white/30 focus:border-yellow-300"
             />
             {errors.email && (
               <p className="text-red-300 text-sm mt-1">
@@ -89,7 +93,7 @@ export default function Login() {
               type="password"
               {...register("password", { required: "Password is required" })}
               placeholder="Enter password"
-              className="input input-bordered w-full bg-white/20 text-white placeholder-white/50 border-white/30 focus:border-yellow-300"
+              className="input input-bordered mb-4 mt-2 w-full bg-white/20 text-white placeholder-white/50 border-white/30 focus:border-yellow-300"
             />
             {errors.password && (
               <p className="text-red-300 text-sm mt-1">

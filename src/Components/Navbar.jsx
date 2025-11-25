@@ -99,7 +99,7 @@ export default function Navbar() {
             className="sm:w-10"
             src="https://img.icons8.com/doodle/48/camcorder-pro.png"
           />
-          <span className="text-2xl sm:text-3xl font-bold tracking-wide">
+          <span className="text-2xl sm:text-3xl font-bold tracking-wide logo">
             CineRealm
           </span>
         </Link>
@@ -150,9 +150,13 @@ export default function Navbar() {
       <div className="navbar-end flex gap-3">
         {user ? (
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full border border-orange-500">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost btn-circle avatar w-14 h-14"
+            >
+              <div className=" rounded-full border border-orange-500">
                 <img
+                  className="rounded-full border border-white cursor-pointer transition-transform h-14 w-14 duration-300 group-hover:scale-110"
                   src={
                     user?.photoURL
                       ? user.photoURL

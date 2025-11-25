@@ -110,7 +110,7 @@ export default function ManageMovies() {
 
             <div className="mt-3 flex gap-2">
               <Link
-                href={`/manage-movies/edit/${movie._id}`}
+                href={`/manage-movies/${movie._id}`}
                 className="btn btn-sm btn-info w-1/2"
               >
                 Edit
