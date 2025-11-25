@@ -11,7 +11,7 @@ export default function AllMovies() {
   const [search, setSearch] = useState("");
   const [sortType, setSortType] = useState("");
 
-  // ⭐ PAGINATION STATES
+  //  PAGINATION STATES
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 12;
 
@@ -25,7 +25,7 @@ export default function AllMovies() {
       .catch((err) => console.error("Error loading movies:", err));
   }, [axiosSecure]);
 
-  // ⭐ SEARCH MOVIES
+  //  SEARCH MOVIES
   const handleSearch = (value) => {
     setSearch(value);
 
@@ -61,13 +61,13 @@ export default function AllMovies() {
     }
 
     setMovies(sortedMovies);
-    setCurrentPage(1); // reset page
+    setCurrentPage(1);
   };
 
   const fallbackImage =
     "https://img.icons8.com/emoji/96/clapper-board-emoji.png";
 
-  // ⭐ PAGINATION LOGIC (slice the data)
+  //  PAGINATION
   const indexOfLast = currentPage * moviesPerPage;
   const indexOfFirst = indexOfLast - moviesPerPage;
   const currentMovies = movies.slice(indexOfFirst, indexOfLast);
@@ -85,7 +85,7 @@ export default function AllMovies() {
         just for you.
       </p>
 
-      {/* ⭐ Search + Sort */}
+      {/*  Search + Sort */}
       <div className="flex flex-col sm:flex-row gap-4 mb-6 opacity-0 animate-[fadeIn_1.3s_ease-out_forwards]">
         <input
           type="text"
@@ -108,7 +108,7 @@ export default function AllMovies() {
         </select>
       </div>
 
-      {/* ⭐ Movies Grid */}
+      {/*  Movies Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {currentMovies.map((movie, index) => (
           <div
@@ -150,7 +150,7 @@ export default function AllMovies() {
             </div>
 
             <div className="mt-auto">
-              <Link href={`/all-movies/${movie.title}`}>
+              <Link href={`/all-movies/${movie._id}`}>
                 <button className="btn btn-warning w-full text-black font-semibold">
                   View Details
                 </button>
@@ -160,7 +160,7 @@ export default function AllMovies() {
         ))}
       </div>
 
-      {/* ⭐ PAGINATION BUTTONS */}
+      {/*  PAGINATION BUTTONS */}
       <div className="flex justify-center mt-8 gap-2 opacity-0 animate-[fadeIn_1.5s_ease-out_forwards]">
         <button
           className="btn btn-sm"
