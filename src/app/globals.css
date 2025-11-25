@@ -1,26 +1,77 @@
-@import "tailwindcss";
+/* Logo Font */
+/* @import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"); */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Stack+Sans+Notch:wght@200..700&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Rubik+Iso&family=Stack+Sans+Notch:wght@200..700&display=swap");
+
+/* Body Font */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* Logo */
+.logo {
+  /* font-family: "Stack Sans Notch", sans-serif; */
+  /* font-family: "Rubik Iso", system-ui; */
+  font-family: "Grenze Gotisch", serif;
 }
 
-@theme inline {
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #ef4444;
+  --color-secondary: #f59e0b;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @layer components {
+  .btn-main {
+    @apply btn bg-[#ef4444] text-white hover:bg-[#dc2626];
+  }
+} */
+
+/* Nav Bg - bg-amber-200 */
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+} */
