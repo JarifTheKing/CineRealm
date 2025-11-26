@@ -40,6 +40,31 @@ CineRealm is a modern movie discovery platform built using **Next.js**, **Fireba
 
 ---
 
+# 🗺️ Route Summary
+
+Public Routes
+
+# Route (Description)
+
+/ Homepage --> with banners & featured movies
+/all-movies --> Browse all movies
+/bollywood --> Bollywood category movies
+/hollywood --> Hollywood category movies
+/foreign --> Foreign category movies
+/about --> About the CineRealm platform
+/login --> User login page
+/register --> New user registration
+
+# Private (Protected) Routes
+
+Route Description
+/add-movies --> Add new movies (requires login)
+/manage-movies --> View & manage user-added movies
+/my-profile --> Update profile, picture, display name
+/all-movies/[id] --> Single movie details page
+
+---
+
 ## 🧩 Tech Stack
 
 - **Next.js 14** (App Router)
@@ -63,18 +88,3 @@ MIT © CineRealm
 ```
 
 ```
-
-<div className="flex gap-2 sm:gap-3">
-              <Link href="/login">
-                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto ">
-                  Login
-                </button>
-              </Link>
-
-              
-              <Link href="/register">
-                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto sm:p-1">
-                  Register
-                </button>
-              </Link>
-            </div>
