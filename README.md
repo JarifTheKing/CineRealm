@@ -63,3 +63,18 @@ MIT © CineRealm
 ```
 
 ```
+
+<div className="flex gap-2 sm:gap-3">
+              <Link href="/login">
+                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto ">
+                  Login
+                </button>
+              </Link>
+
+              
+              <Link href="/register">
+                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto sm:p-1">
+                  Register
+                </button>
+              </Link>
+            </div>

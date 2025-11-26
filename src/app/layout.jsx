@@ -26,10 +26,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:max-w-full sm:mx-auto">
           <AuthProvider>
             <Toaster position="top-center" />
-
             <Navbar />
             {children}
             <Footer />

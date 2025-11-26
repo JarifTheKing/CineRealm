@@ -25,11 +25,10 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full px-2 sm:px-4">
+    <div className="">
       <div
         className="
         navbar glass-nav
-        bg-gradient-to-r from-purple-700/40 via-fuchsia-600/40 to-pink-600/40
         rounded-3xl 
         px-3 sm:px-5 py-2 mb-10 mt-4
         shadow-[0_0_25px_rgba(255,0,255,0.4)]
@@ -41,7 +40,7 @@ export default function Navbar() {
       "
       >
         {/* LEFT */}
-        <div className="navbar-start flex items-center gap-2">
+        <div className="navbar-start flex  items-center gap-2">
           {/* MOBILE MENU */}
           <div className="dropdown lg:hidden">
             <button tabIndex={0} className="btn btn-ghost btn-circle">
@@ -199,17 +198,61 @@ export default function Navbar() {
               </ul>
             </div>
           ) : (
-            <div className="flex gap-2 sm:gap-3">
-              <Link href="/login">
-                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto">
-                  Login
-                </button>
-              </Link>
-              <Link href="/register">
-                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto">
-                  Register
-                </button>
-              </Link>
+            <div className="flex items-center">
+              {/* visible md and lg devices */}
+              <div className="hidden md:flex gap-2">
+                <Link href="/login">
+                  <button className="btn btn-warning text-black font-semibold w-full  ">
+                    Login
+                  </button>
+                </Link>
+
+                <Link href="/register">
+                  <button className="btn btn-warning text-black font-semibold w-full">
+                    Register
+                  </button>
+                </Link>
+              </div>
+
+              {/* visible only Mobile device */}
+              <div className="dropdown dropdown-end md:hidden lg:hidden">
+                <label
+                  tabIndex={0}
+                  className="btn btn-warning btn-circle avatar w-12 h-12 sm:w-14 sm:h-14"
+                >
+                  <div className="rounded-full border-2 border-blue-700 overflow-hidden">
+                    <img
+                      className="rounded-full h-full w-full object-cover cursor-pointer"
+                      // src={
+                      //   "https://img.icons8.com/ios-filled/50/login-rounded-right.png"
+                      // }
+                      src="/log-lock.jpeg"
+                      alt="User"
+                    />
+                  </div>
+                </label>
+
+                <ul
+                  tabIndex={0}
+                  className="menu dropdown-content bg-fuchsia-800 text-white rounded-box w-35 mt-3 shadow-lg animate-dropdown origin-top-right"
+                >
+                  <li>
+                    <Link href="/login">
+                      <button className="btn btn-warning text-black font-semibold w-full sm:w-auto ">
+                        Login
+                      </button>
+                    </Link>{" "}
+                  </li>
+
+                  <li>
+                    <Link href="/register">
+                      <button className="btn btn-warning text-black font-semibold w-full sm:w-auto sm:p-1">
+                        Register
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </div>
