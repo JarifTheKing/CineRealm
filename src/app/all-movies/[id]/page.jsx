@@ -43,7 +43,7 @@ export default function Details({ params }) {
         {/* Banner */}
         <div
           className="w-full h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-xl 
-      hover:scale-[1.02] transition duration-500 border-4 border-purple-500/40"
+          hover:scale-[1.02] transition duration-500 border-4 border-purple-500/40"
         >
           <Image
             src={movie.image || fallbackImg}
@@ -56,21 +56,21 @@ export default function Details({ params }) {
 
         {/* Title + Meta */}
         <div className="space-y-3 animate-[slideUp_0.6s_ease-out]">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold text-yellow-300">
             {movie.title}
           </h1>
 
           <div className="flex flex-wrap gap-3 text-sm">
-            <span className="px-3 py-1 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600">
+            <span className="px-3 py-1 rounded-md bg-purple-700">
               ⭐ IMDb: {movie.imdb_rating}
             </span>
-            <span className="px-3 py-1 rounded-md bg-gradient-to-r from-blue-600 to-cyan-500">
+            <span className="px-3 py-1 rounded-md bg-blue-700">
               🎬 Genre: {movie.genre}
             </span>
-            <span className="px-3 py-1 rounded-md bg-gradient-to-r from-green-600 to-lime-500">
+            <span className="px-3 py-1 rounded-md bg-green-700">
               🌐 Language: {movie.language}
             </span>
-            <span className="px-3 py-1 rounded-md bg-gradient-to-r from-pink-600 to-red-500">
+            <span className="px-3 py-1 rounded-md bg-red-700">
               📅 Release: {movie.release_date}
             </span>
           </div>
@@ -79,7 +79,7 @@ export default function Details({ params }) {
         {/* Description */}
         <div
           className="p-5 md:p-7 rounded-xl shadow-lg 
-      bg-gradient-to-br from-indigo-600/40 to-purple-600/30 border border-white/20 animate-[fadeIn_1.2s_ease-out]"
+          bg-indigo-700 border border-white/20 animate-[fadeIn_1.2s_ease-out]"
         >
           <h2 className="text-2xl font-semibold mb-3 text-yellow-300 drop-shadow-lg">
             Description
@@ -90,7 +90,7 @@ export default function Details({ params }) {
         {/* Storyline */}
         <div
           className="p-5 md:p-7 rounded-xl shadow-lg 
-      bg-gradient-to-br from-rose-600/40 to-orange-500/30 border border-white/20 animate-[fadeIn_1.4s_ease-out]"
+          bg-rose-700 border border-white/20 animate-[fadeIn_1.4s_ease-out]"
         >
           <h2 className="text-2xl font-semibold mb-3 text-orange-300 drop-shadow-lg">
             Storyline
@@ -103,10 +103,7 @@ export default function Details({ params }) {
         {/* Extra Info */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Movie Info */}
-          <div
-            className="p-5 rounded-xl shadow-lg 
-        bg-gradient-to-br from-green-600/40 to-emerald-500/30 border border-white/20 animate-[slideUp_0.8s_ease-out]"
-          >
+          <div className="p-5 rounded-xl shadow-lg bg-green-700 border border-white/20 animate-[slideUp_0.8s_ease-out]">
             <h3 className="text-xl font-semibold mb-2 text-lime-300 drop-shadow-md">
               Movie Info
             </h3>
@@ -122,10 +119,7 @@ export default function Details({ params }) {
           </div>
 
           {/* Additional Details */}
-          <div
-            className="p-5 rounded-xl shadow-lg 
-        bg-gradient-to-br from-blue-600/40 to-cyan-500/30 border border-white/20 animate-[slideUp_1s_ease-out]"
-          >
+          <div className="p-5 rounded-xl shadow-lg bg-blue-700 border border-white/20 animate-[slideUp_1s_ease-out]">
             <h3 className="text-xl font-semibold mb-2 text-cyan-300 drop-shadow-md">
               Additional Details
             </h3>
@@ -147,9 +141,8 @@ export default function Details({ params }) {
           <Link
             href="/all-movies"
             className="inline-block btn backdrop-blur-md px-4 py-2 rounded-lg 
-          bg-gradient-to-r from-gray-500 to-gray-700 
-          hover:from-amber-300 hover:to-yellow-400 hover:text-black 
-          transition border border-white/30"
+            bg-gray-700 hover:bg-yellow-400 hover:text-black 
+            transition border border-white/30"
           >
             ← Back to Movies
           </Link>
@@ -158,9 +151,8 @@ export default function Details({ params }) {
           <button
             onClick={handleDownload}
             className="inline-block btn px-4 py-2 rounded-lg 
-          bg-gradient-to-r from-yellow-400 to-orange-500 text-black
-          hover:from-green-400 hover:to-emerald-500 
-          transition border border-white/30"
+            bg-yellow-500 text-black hover:bg-green-400 
+            transition border border-white/30"
           >
             ⬇ Download
           </button>
