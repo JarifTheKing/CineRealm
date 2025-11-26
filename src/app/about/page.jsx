@@ -20,13 +20,20 @@ export default function AboutPage() {
         rounded-3xl shadow-[0_0_100px_-20px_rgba(255,255,255,0.6)]
         p-10 md:p-16 
         animate-fadeInUp
+
+        /* NEW gradient + glass improvements */
+        bg-gradient-to-br from-white/10 via-white/5 to-white/0
+        hover:bg-gradient-to-br hover:from-white/20 hover:via-white/10 hover:to-white/0
+        transition-all duration-700
+        hover:shadow-[0_0_140px_-10px_rgba(255,80,255,0.5)]
         "
       >
         <Link href="https://github.com/JarifTheKing" target="_blank">
           <img
             src="/Okew.jpg"
             alt=""
-            className="rounded-full w-50 h-50 mx-auto object-cover mb-6 shadow-xl"
+            className="rounded-full w-50 h-50 mx-auto object-cover mb-6 shadow-xl 
+            bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 p-[3px]"
           />
         </Link>
 
@@ -74,6 +81,12 @@ export default function AboutPage() {
                 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2
                 relative overflow-hidden shadow-lg hover:shadow-2xl
                 animate-fadeIn
+
+                /* NEW colorful gradient border effect */
+                before:absolute before:inset-0 before:rounded-2xl
+                before:bg-gradient-to-r before:from-fuchsia-400/20 before:to-cyan-400/20
+                before:opacity-0 group-hover:before:opacity-40 before:blur-xl
+                before:transition-all before:duration-700
               "
             >
               {/* Hover Glow Overlay */}
