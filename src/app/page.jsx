@@ -6,47 +6,47 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="text-white">
+    <div className="text-white w-full overflow-hidden">
       {/* HERO SECTION */}
-      <div className="animate-[fadeIn_1s_ease]">
-        <HeroBanner></HeroBanner>
+      <div className="animate-[fadeIn_1s_ease] w-full">
+        <HeroBanner />
       </div>
 
       {/* FEATURED MOVIES SECTION*/}
-      <div className="animate-[fadeInUp_1.1s_ease]">
-        <FeaturedMovies></FeaturedMovies>
+      <div className="animate-[fadeInUp_1.1s_ease] w-full">
+        <FeaturedMovies />
       </div>
 
-      {/* COMMUNITY SECTION (NEW) */}
-      <section className="w-full mt-14 mb-16">
+      {/* COMMUNITY SECTION */}
+      <section className="w-full mt-14 mb-16 px-4 md:px-6">
         <div
           className="
-            bg-[#0b0f19] rounded-3xl p-10 md:p-14 
+            bg-[#0b0f19] rounded-3xl p-6 sm:p-10 md:p-14 
             border border-white/10 shadow-2xl relative overflow-hidden
-            animate-[fadeInUp_1.3s_ease]
+            animate-[fadeInUp_1.3s_ease] max-w-6xl mx-auto
           "
         >
           {/* Background Glow */}
-          <div className="absolute w-[300px] h-[300px] bg-red-500/20 blur-[150px] rounded-full -top-10 left-10"></div>
-          <div className="absolute w-[260px] h-[260px] bg-green-500/20 blur-[150px] rounded-full bottom-0 right-0"></div>
+          <div className="absolute w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-red-500/20 blur-[150px] rounded-full -top-10 left-10"></div>
+          <div className="absolute w-[180px] sm:w-[260px] h-[180px] sm:h-[260px] bg-green-500/20 blur-[150px] rounded-full bottom-0 right-0"></div>
 
           {/* Title */}
-          <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-2 tracking-wide animate-[fadeIn_1s_ease]">
+          <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 tracking-wide animate-[fadeIn_1s_ease] px-2">
             Join Our Community & Watch Live TV
           </h2>
-          <p className="text-center text-gray-300 max-w-xl mx-auto mb-8 animate-[fadeInUp_1.1s_ease]">
+          <p className="text-center text-gray-300 max-w-xl mx-auto mb-8 px-3 animate-[fadeInUp_1.1s_ease]">
             Connect with us and enjoy unlimited entertainment
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row justify-center gap-4 mt-3 animate-[fadeInUp_1.2s_ease]">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-3 animate-[fadeInUp_1.2s_ease] w-full">
             {/* Join Telegram */}
             <a
               href="https://web.telegram.org/k/"
               target="_blank"
               className="
                 bg-blue-600 hover:bg-blue-700 transition duration-300
-                text-white font-semibold px-6 py-3 rounded-xl 
+                text-white font-semibold px-6 py-3 rounded-xl w-full md:w-auto
                 shadow-lg shadow-blue-700/30 flex items-center gap-2 justify-center
                 hover:scale-[1.05] active:scale-[0.97]
               "
@@ -59,7 +59,7 @@ export default function HomePage() {
               href="#"
               className="
                 bg-green-600 hover:bg-green-700 transition duration-300
-                text-white font-semibold px-6 py-3 rounded-xl 
+                text-white font-semibold px-6 py-3 rounded-xl w-full md:w-auto
                 shadow-lg shadow-green-700/30 flex items-center gap-2 justify-center
                 hover:scale-[1.05] active:scale-[0.97]
               "
@@ -72,7 +72,7 @@ export default function HomePage() {
               href="#"
               className="
                 bg-red-600 hover:bg-red-700 transition duration-300
-                text-white font-semibold px-6 py-3 rounded-xl 
+                text-white font-semibold px-6 py-3 rounded-xl w-full md:w-auto
                 shadow-lg shadow-red-700/30 flex items-center gap-2 justify-center
                 hover:scale-[1.05] active:scale-[0.97]
               "
@@ -91,8 +91,8 @@ export default function HomePage() {
       </section>
 
       {/* CATEGORIES Section */}
-      <section className="p-6 md:p-10 bg-gray-950/60 rounded-3xl animate-[fadeInUp_1.2s_ease]">
-        <h2 className="text-3xl font-bold mb-6 animate-[fadeIn_1s_ease]">
+      <section className="p-4 sm:p-6 md:p-10 bg-gray-950/60 rounded-3xl animate-[fadeInUp_1.2s_ease] max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 animate-[fadeIn_1s_ease]">
           Browse by Category
         </h2>
 
@@ -134,9 +134,9 @@ export default function HomePage() {
           {/* Foreign */}
           <Link
             href="/foreign"
-            className="relative p-8 rounded-xl text-center transition
+            className="relative p-8 rounded-xl text-center transition 
              bg-[url('https://res.cloudinary.com/dq6ahnk8w/image/upload/v1764066762/foreign_jinpvw.png')]
-             bg-cover bg-center border border-green-500/30
+             bg-cover bg-center border border-green-500/30 
              hover:bg-green-500/30 hover:bg-blend-overlay
              flex flex-col justify-center items-center overflow-hidden
              animate-[fadeInUp_1s_ease] hover:scale-[1.04] duration-300"
@@ -151,13 +151,13 @@ export default function HomePage() {
       </section>
 
       {/* TOP RATED MOVIES */}
-      <div className="animate-[fadeIn_1.3s_ease]">
-        <TopMovies></TopMovies>
+      <div className="animate-[fadeIn_1.3s_ease] w-full">
+        <TopMovies />
       </div>
 
       {/* TESTIMONIALS */}
-      <section className="p-6 md:p-10 bg-gray-950/60 rounded-3xl animate-[fadeInUp_1.4s_ease]">
-        <h2 className="text-3xl font-bold mb-6">What Users Say</h2>
+      <section className="p-4 sm:p-6 md:p-10 bg-gray-950/60 rounded-3xl animate-[fadeInUp_1.4s_ease] max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">What Users Say</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
@@ -176,10 +176,10 @@ export default function HomePage() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-br from-[#24243e] via-[#302b63] to-[#0f0c29] p-6 rounded-xl shadow-lg 
-        hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 text-white border border-white/10 
-        min-h-[180px] flex flex-col justify-between
-        animate-[fadeInUp_0.8s_ease]"
+              className="bg-gradient-to-br from-[#24243e] via-[#302b63] to-[#0f0c29]
+              p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.05]
+              transition-all duration-300 text-white border border-white/10 
+              min-h-[180px] flex flex-col justify-between animate-[fadeInUp_0.8s_ease]"
               style={{ animationDelay: `${idx * 0.25}s` }}
             >
               <p className="italic opacity-90">{item.text}</p>

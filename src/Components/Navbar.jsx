@@ -25,23 +25,23 @@ export default function Navbar() {
   };
 
   return (
-    <div className="">
+    <div className="w-full px-2 sm:px-4">
       <div
         className="
-        navbar 
-        glass-nav
-        
+        navbar glass-nav
+        bg-gradient-to-r from-purple-700/40 via-fuchsia-600/40 to-pink-600/40
         rounded-3xl 
-        px-4 sm:px-5 py-2 mb-10 mt-4
+        px-3 sm:px-5 py-2 mb-10 mt-4
         shadow-[0_0_25px_rgba(255,0,255,0.4)]
         border border-white/10
-        text-white max-w-full
+        text-white w-full
         transition-all duration-500
         hover:shadow-[0_0_40px_rgba(255,0,255,0.6)]
+        flex items-center justify-between
       "
       >
         {/* LEFT */}
-        <div className="navbar-start">
+        <div className="navbar-start flex items-center gap-2">
           {/* MOBILE MENU */}
           <div className="dropdown lg:hidden">
             <button tabIndex={0} className="btn btn-ghost btn-circle">
@@ -99,13 +99,16 @@ export default function Navbar() {
           </div>
 
           {/* LOGO */}
-          <Link href="/" className="flex items-center gap-2 cursor-pointer">
+          <Link
+            href="/"
+            className="flex items-center gap-2 cursor-pointer max-w-full"
+          >
             <img
               width="36"
-              className="sm:w-10"
+              className="w-8 sm:w-10"
               src="https://img.icons8.com/doodle/48/camcorder-pro.png"
             />
-            <span className="text-2xl sm:text-3xl font-bold tracking-wide logo">
+            <span className="text-xl sm:text-3xl font-bold tracking-wide logo whitespace-nowrap">
               CineRealm
             </span>
           </Link>
@@ -113,7 +116,7 @@ export default function Navbar() {
 
         {/* CENTER MENU (DESKTOP) */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-md font-semibold">
+          <ul className="menu menu-horizontal px-1 text-md font-semibold flex-wrap gap-1">
             <li>
               <Link href="/" className={isActive("/")}>
                 Home
@@ -148,16 +151,16 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT */}
-        <div className="navbar-end flex gap-3">
+        <div className="navbar-end flex items-center gap-3">
           {user ? (
-            <div className="dropdown dropdown-end ">
+            <div className="dropdown dropdown-end">
               <label
                 tabIndex={0}
-                className="btn btn-ghost btn-circle avatar w-14 h-14"
+                className="btn btn-ghost btn-circle avatar w-12 h-12 sm:w-14 sm:h-14"
               >
-                <div className="rounded-full border-2 border-blue-700">
+                <div className="rounded-full border-2 border-blue-700 overflow-hidden">
                   <img
-                    className="rounded-full border border-white cursor-pointer transition-transform h-14 w-14 duration-300 group-hover:scale-110"
+                    className="rounded-full h-full w-full object-cover cursor-pointer"
                     src={
                       user?.photoURL
                         ? user.photoURL
@@ -196,18 +199,18 @@ export default function Navbar() {
               </ul>
             </div>
           ) : (
-            <>
+            <div className="flex gap-2 sm:gap-3">
               <Link href="/login">
-                <button className="btn btn-warning text-black font-semibold">
+                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto">
                   Login
                 </button>
               </Link>
               <Link href="/register">
-                <button className="btn btn-warning text-black font-semibold">
+                <button className="btn btn-warning text-black font-semibold w-full sm:w-auto">
                   Register
                 </button>
               </Link>
-            </>
+            </div>
           )}
         </div>
       </div>
