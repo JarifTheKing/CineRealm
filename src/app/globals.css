@@ -1,17 +1,31 @@
+/* ----------------------------------
+   Google Fonts
+----------------------------------- */
+
 /* Logo Font */
-/* @import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap"); */
-
-/* @import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Stack+Sans+Notch:wght@200..700&display=swap"); */
-
 @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Rubik+Iso&family=Stack+Sans+Notch:wght@200..700&display=swap");
 
 /* Body Font */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-/* Logo */
+/* ----------------------------------
+   Tailwind & DaisyUI
+----------------------------------- */
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  /* Theme Colors */
+  --color-primary: #ef4444;
+  --color-secondary: #f59e0b;
+}
+
+/* ----------------------------------
+   Global Fonts
+----------------------------------- */
 .logo {
-  /* font-family: "Stack Sans Notch", sans-serif; */
-  /* font-family: "Rubik Iso", system-ui; */
   font-family: "Grenze Gotisch", serif;
 }
 
@@ -19,16 +33,9 @@
   font-family: "Ubuntu", sans-serif;
 }
 
-@import "tailwindcss";
-@plugin "daisyui";
-@plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  --color-primary: #ef4444;
-  --color-secondary: #f59e0b;
-}
-
-/* Animation */
+/* ----------------------------------
+   Animations
+----------------------------------- */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -49,29 +56,95 @@
   }
 }
 
-/* @layer components {
-  .btn-main {
-    @apply btn bg-[#ef4444] text-white hover:bg-[#dc2626];
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.fade-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.glass-nav,
+.glass-footer {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  /* Colorful Gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 150, 0.15),
+    rgba(0, 120, 255, 0.12),
+    rgba(0, 255, 180, 0.12)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+  /* Smooth Animation */
+  animation: glassColorGlow 7s ease-in-out infinite alternate;
+}
+
+/* Color-changing glow animation */
+@keyframes glassColorGlow {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 150, 0.18),
+      rgba(0, 120, 255, 0.1),
+      rgba(0, 255, 180, 0.12)
+    );
+    box-shadow: 0 8px 32px rgba(255, 0, 150, 0.2);
   }
-} */
 
-/* Nav Bg - bg-amber-200 */
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  50% {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 120, 255, 0.16),
+      rgba(0, 255, 180, 0.14),
+      rgba(255, 0, 150, 0.1)
+    );
+    box-shadow: 0 8px 32px rgba(0, 120, 255, 0.25);
   }
-} */
+
+  100% {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 180, 0.18),
+      rgba(255, 0, 150, 0.12),
+      rgba(0, 120, 255, 0.1)
+    );
+    box-shadow: 0 12px 40px rgba(0, 255, 180, 0.25);
+  }
+}
+
+/* Mobile Dropdown & User Dropdown Color Upgrade */
+.menu.dropdown-content,
+.menu-sm.dropdown-content {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 120, 0.35),
+    rgba(120, 0, 255, 0.3),
+    rgba(0, 180, 255, 0.25)
+  ) !important;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(255, 0, 255, 0.3);
+
+  animation: dropdownGlow 6s ease-in-out infinite alternate;
+}
+
+/* Glow animation */
+@keyframes dropdownGlow {
+  0% {
+    box-shadow: 0 0 18px rgba(255, 0, 200, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 140, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(0, 255, 200, 0.25);
+  }
+}

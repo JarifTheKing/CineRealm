@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-fuchsia-900 text-neutral-content px-6 py-10 mt-10 rounded-t-3xl">
+    <footer className="glass-footer text-neutral-content rounded-b-0 px-6 py-10 mt-10 rounded-t-3xl">
       <div className="container mx-auto grid gap-10 md:grid-cols-3 lg:grid-cols-4">
         {/* Brand Section */}
         <div className="flex flex-col items-start">
